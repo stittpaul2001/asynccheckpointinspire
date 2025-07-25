@@ -17,3 +17,20 @@ body {
   background-position: center;
   background-size: cover
 }
+
+main {
+  display: flex;
+  flex-direction: row-revese;
+  justify-content: space-around;
+  align-items: flex-end;
+  padding: 5;
+}
+
+.hide-book-open-page-variant:hover+section {
+  transition: opacity .5s ease;
+  opacity: 1;
+}
+
+.hide-book-open-page-variant+section {
+  opacity: 0;
+}

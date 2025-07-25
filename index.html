@@ -10,6 +10,7 @@
     href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/7.0.96/css/materialdesignicons.min.css"
     integrity="sha512-fXnjLwoVZ01NUqS/7G5kAnhXNXat6v7e3M9PhoMHOTARUMCaf5qNO84r5x9AFf5HDzm3rEZD8sb/n6dZ19SzFA=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@latest/css/materialdesignicons.min.css">
   <link rel="stylesheet" href="assets/style/main.css">
   <link rel="stylesheet" href="assets/style/style.css">
   <title>asynccheckpointinspire</title>
@@ -22,7 +23,7 @@
       <a class="navbar-brand" href="#">
         <img src="https://codeworks.blob.core.windows.net/public/assets/img/cw-mark.png" height="45" alt=""
           loading="lazy">
-        <span class="ml-2">asynccheckpointinspire</span>
+        <span class="mx-2 fs-1 fw-bold text-danger">Async Checkpoint - Inspire</span>
       </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
         aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -38,31 +39,82 @@
     </nav>
   </header>
 
-  <!-- SECTION -->
-  <main>
-    <div class="container-fluid">
-      <section>
-        <div class="row" id="images">
-          <div class="col-6">
 
+  <!-- SECTION -->
+
+  <main class="mb-5">
+    <div class="conatiner-fluid">
+      <div class="row">
+        <div class="col-12 text-end mt-5 px-5">
+          <button class="btn btn-outline-light btn-info rounded-pill fw-bold shadow border border-3 border-dark"
+            type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
+            aria-controls="offcanvasRight">Toggle to get
+            To-Do's
+          </button>
+          <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+            <div class="offcanvas-header">
+              <h1 class="offcanvas-title" id="offcanvasRightLabel">To-Do's</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+              <!-- //STUB - My Todos Form -->
+              <form>
+                <div class="input-group col-auto">
+                  <input class="form-check-input px-2 g-2" type="checkbox" value="" id="defaultCheck1">
+                </div>
+                <div class="input-group col-auto">
+                  <label for="inputPassword2" class="visually-hidden">text</label>
+                  <input type="task" id="task" class="form-control g-2" aria-describedby="task">
+                  <button class="btn btn-outline-danger g-2" type="button" id="button-addon2">Delete</button>
+                </div>
+              </form>
+            </div>
           </div>
         </div>
-      </section>
-    </div>
-    <section class="container-fluid">
-      <div class="row d-block">
-        <div class="col-md-5">
-          <h1 class="card quote-card fs-1 text-primary">Will be my Quote sections</h1>
-        </div>
-
       </div>
-    </section>
+    </div>
+
+
+
+
+    <div class="container-fluid">
+      <div class="row justify-content-between align-text-center">
+        <div class="col-md-8 mx-4 card quote-card mb-3 rounded-pill border border-4 border-danger">
+          <!-- //STUB - My Quotes section -->
+          <div class="card bg-info mb-3 mt-3 rounded-pill justify-content-center shadow text-dark">
+            <div class="card-body" id="drawQuotesList">
+              <!-- <div class="text-center fs-1">this quote</div>
+                <div class="text-end mx-2 px-2 fs-3 fw-intalic">The Author</div> -->
+              <!-- <i class="mdi fw-bold  mdi-book-open-page-variant"></i> -->
+
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row justify-content-between">
+        <div class="col-md-10 card mx-4 rounded-pill border border-4 border-danger">
+          <div class="align-center justify-content-around">
+            <!-- //STUB - My Clock/Weather/off-canvas toggle Section -->
+            <h1 class="fw-bold text-danger text-center" id="Clock"></h1>
+            <h1 class="mc-2">Weather</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </main>
 
   <!-- SECTION -->
   <footer class="bg-dark text-light">
     <div class="text-center no-select">
-      <p class="mb-0"><small>Made with 💖 by CodeWorks</small></p>
+      <p class="mb-0"><small>Made with 💖 by This Guy </small></p>
+    </div>
+    <div class="container-fluid">
+      <div class="row" id="images">
+        <div class="col-6"></div>
+      </div>
     </div>
   </footer>
 
