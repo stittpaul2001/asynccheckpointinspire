@@ -9,6 +9,7 @@ export class ToDosController {
   constructor() {
     console.log('This is the ToDos Controller, what what!!!')
     AppState.on('user', this.getTodos)
+    AppState.on('identity', this.drawToDos)
     AppState.on('todos', this.drawToDos)
     AppState.on('todos', this.getToDosForm)
 
@@ -35,6 +36,7 @@ export class ToDosController {
     let incomplete = todos.filter(todos => todos.completed == false)
 
     document.getElementById('todosCount').innerHTML = `${incomplete.length}/${todos.length}`
+
   }
 
 
@@ -59,6 +61,23 @@ export class ToDosController {
       todosForm.remove()
     } catch (error) {
       Pop.toast('could not create a task')
+      console.error(error)
+
+    }
+
+  }
+
+  async deleteTodo(todoId) {
+    try {
+      // @ts-ignore
+      const confirmed = await Pop.confirm('Are you sure that it is a good idea to delete this?', 'think about your decision here', 'Yes i know that i am a horrible person but it needs to be gone', 'No i decided to keep it')
+      console.log('delete button', todoId)
+      if (confirmed == false) {
+        return
+      }
+      await toDosService.deleteTodo(todoId)
+    } catch (error) {
+      Pop.toast('could not delete this task')
       console.error(error)
     }
   }

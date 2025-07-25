@@ -18,7 +18,7 @@ class App {
 
   quotesController = new QuotesController()
 
-  toDosController = new ToDosController()
+  todosController = new ToDosController()
 
   weatherController = new WeatherController()
 
