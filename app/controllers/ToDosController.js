@@ -49,7 +49,7 @@ export class ToDosController {
 
 
 
-  async CreateTodo() {
+  async createTodo() {
     try {
       event.preventDefault()
       const todosForm = event.target
