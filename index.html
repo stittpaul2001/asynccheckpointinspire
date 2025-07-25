@@ -53,21 +53,33 @@
           </button>
           <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
             <div class="offcanvas-header">
-              <h1 class="offcanvas-title" id="offcanvasRightLabel">To-Do's</h1>
+              <h1 class="offcanvas-title text-center fw-bold" id="offcanvasRightLabel">To-Do's</h1>
               <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
             </div>
             <div class="offcanvas-body">
               <!-- //STUB - My Todos Form -->
-              <form>
-                <div class="input-group col-auto">
-                  <input class="form-check-input px-2 g-2" type="checkbox" value="" id="defaultCheck1">
-                </div>
-                <div class="input-group col-auto">
-                  <label for="inputPassword2" class="visually-hidden">text</label>
-                  <input type="task" id="task" class="form-control g-2" aria-describedby="task">
-                  <button class="btn btn-outline-danger g-2" type="button" id="button-addon2">Delete</button>
-                </div>
-              </form>
+              <div id="todosForm">
+
+                <form onsubmit="app.todosController.createTodo()">
+                  <div class="d-flex mb-2">
+                    <label for="Create New Task"></label>
+                    <input required type="text" name="title" class="form-control form-input text-center fs-3" id="title"
+                      minlength="3 characters" maxlength="150" placeholder="Task Title">
+                    <button title="createTask" class="btn btn-outline-success btn-warning fw-bold" type="submit">Create
+                      New Task</button>
+                  </div>
+                  <div id="todosList" class="text-center">
+                    <div class="text-end" id="todosCount" ${this.count}></div>
+                    <!-- <div class="card todoCard">
+                            <div class="justify-content-between mx-3 g-2">
+                              <input type="checkbox">
+                                <span class="fs-2 g-2">Todo Description</span>
+                              <button class="btn btn-outline-dark btn-danger fs-3 fw-bold">Delete</button>
+                            </div>
+                          </div> -->
+                  </div>
+                </form>
+              </div>
             </div>
           </div>
         </div>

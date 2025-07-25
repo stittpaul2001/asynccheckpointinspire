@@ -34,3 +34,9 @@ main {
 .hide-book-open-page-variant+section {
   opacity: 0;
 }
+
+.todo-card {
+  object-position: center;
+  object-fit: contain;
+  width: 100%
+}
