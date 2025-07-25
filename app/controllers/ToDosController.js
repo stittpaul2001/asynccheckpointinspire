@@ -58,7 +58,7 @@ export class ToDosController {
       await toDosService.createTodo(todosData)
       console.log('is my form submitting?')
       // @ts-ignore
-      todosForm.remove()
+      todosForm.reset()
     } catch (error) {
       Pop.toast('could not create a task')
       console.error(error)
