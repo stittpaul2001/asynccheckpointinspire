@@ -1,3 +1,4 @@
+import { AppState } from "../AppState.js";
 import { weatherService } from "../services/WeatherService.js";
 import { Pop } from "../utils/Pop.js";
 
@@ -18,6 +19,11 @@ export class WeatherController {
       Pop.error(error, 'could not get the weather')
     }
 
+  }
+
+  drawTemp() {
+    const temp = AppState.weather
+    const tempElem = document.getElementById('temp')
   }
 
 }

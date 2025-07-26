@@ -17,8 +17,26 @@ export class Weather {
   get celsiusTemp() {
     const kelvin = 293
     const celsius = kelvin - 273
-    return `${this.celsiusTemp}`
+    return Math.floor(celsius)
 
+  }
+
+  get fahrenheitTemp() {
+    const kelvin = 293
+    const fahrenheit = (kelvin - 273) * 9 / 5 + 32
+    return Math.floor(fahrenheit)
+  }
+
+  get tempChanges() {
+    if (this.fahrenheitTemp) {
+      return `<div class="text-center fs-2 p-2">${this.fahrenheitTemp}°F</div>`
+    }
+    return `<div class="text-center fs-2 p-2">${this.celsiusTemp}°C</div>`
+  }
+
+
+  get tempTemplate() {
+    return `${this.tempChanges}`
   }
 
 

@@ -26,12 +26,12 @@ main {
   padding: 5;
 }
 
-.mdi-book-open-page-variant:hover+section {
+.quote-author-stay {
   transition: opacity .5s ease;
   opacity: 1;
 }
 
-.mdi-book-open-page-variant+section {
+.quote-author:hover {
   opacity: 0;
 }
 
