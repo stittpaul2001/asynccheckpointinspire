@@ -6,7 +6,7 @@ export class WeatherController {
 
   constructor() {
     console.log('weather controller coming right atcha')
-
+    AppState.on('weather', this.drawTemp)
     this.getWeather()
   }
 
@@ -22,8 +22,10 @@ export class WeatherController {
   }
 
   drawTemp() {
-    const temp = AppState.weather
-    const tempElem = document.getElementById('temp')
+    const weather = AppState.weather
+    let weatherContent = weather.tempTemplate
+    const weatherElem = document.getElementById('weatherTemp')
+    weatherElem.innerHTML = weatherContent
   }
 
 }

@@ -3,6 +3,7 @@ export class Weather {
 
   constructor(data) {
     this.location = data.location
+    this.icon = data.icon
     this.name = data.name
     this.main = data.main
     this.description = data.description

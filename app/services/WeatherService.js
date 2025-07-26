@@ -4,6 +4,8 @@ import { api } from "./AxiosService.js"
 
 
 class WeatherService {
+
+
   async getWeather() {
     const response = await api.get('api/weather')
     const weather = new Weather(response.data)
