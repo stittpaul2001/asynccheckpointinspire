@@ -5,9 +5,19 @@ import { api } from "./AxiosService.js"
 
 class ToDosService {
 
+
+  async toggleCompletedTodo(todoId) {
+    const findTodo = AppState.todos.find(todo => todo.id == todoId)
+    findTodo.completed = !findTodo.completed
+    const response = await api.put(`api/todos/${todoId}`, findTodo)
+    AppState.emit('todos')
+  }
+
+
+
   async deleteTodo(todoId) {
     const response = await api.delete(`api/todos/${todoId}`)
-
+    console.log(response.data)
     const todos = AppState.todos
     const todoIndex = todos.findIndex(todo => todo.id == todoId)
     AppState.todos.splice(todoIndex, 1)

@@ -82,4 +82,16 @@ export class ToDosController {
     }
   }
 
+  async toggleCompletedTodo(todoId) {
+    try {
+      console.log('toggle checkbox', todoId)
+      const todos = AppState.todos
+
+      await toDosService.toggleCompletedTodo(todoId)
+    } catch (error) {
+      console.error('could not toggle a task')
+      Pop.error(error)
+    }
+  }
+
 }

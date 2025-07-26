@@ -15,11 +15,11 @@ export class ToDo {
   get todosList() {
     return `
     <div class="text-end fs-1 fw-bold" id="todosCount" ${this.count}></div>
-    <div class="card todoCard mb-4">
-                <div class="justify-content-between ${this.completed ? 'completed' : ''}">
-                  <input type="checkbox">- completed ${this.completed}
-                  <span class="fs-2 text-capitalized">${this.description}</span>
-                  <div> ${this.deleteButton}</div>
+    <div class="card todoCard mb-4 border border-3 border-dark">
+                <div class="justify-content-around d-flex fs-2 text-capitalize ${this.completed ? 'completed' : ''}">
+                    <input onchange="app.todosController.toggleCompletedTodo('${this.id}')" class="form-check-input" type="checkbox" name="todo-checkbox" value="checkmark${this.completed}">
+                    <label for="todo"> ${this.description}</label>
+                    ${this.deleteButton}
                 </div>
             </div>
                   `

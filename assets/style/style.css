@@ -26,21 +26,24 @@ main {
   padding: 5;
 }
 
-.hide-book-open-page-variant:hover+section {
+.mdi-book-open-page-variant:hover+section {
   transition: opacity .5s ease;
   opacity: 1;
 }
 
-.hide-book-open-page-variant+section {
+.mdi-book-open-page-variant+section {
   opacity: 0;
 }
 
 .todo-card {
   object-position: center;
-  object-fit: contain;
   width: 100%
 }
 
 .completed {
-  color: green
+  color: rgb(19, 233, 19)
+}
+
+.offcanvas {
+  height: 60vh;
 }
