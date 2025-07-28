@@ -93,7 +93,7 @@
 
     <div class="container-fluid">
       <div class="row d-flex justify-content-around align-items-center">
-        <div class="col-md-8 mx-4 card quote-card mb-3 rounded-pill border border-4 border-danger">
+        <div class="col-md-8 mx-1 card quote-card rounded-pill border border-4 border-danger">
           <!-- //STUB - My Quotes section -->
           <div class="card bg-info mb-3 mt-3 rounded-pill text-dark">
             <div class="card-body" id="drawQuotesList">
@@ -108,20 +108,22 @@
 
 
 
-      <div class="row justify-content-around align-items-center mb-4 mt-2 mx-2">
+      <div class="row justify-content-around align-items-center mb-4 mt-2 px-3">
         <div class="col-md-10 card rounded-pill border border-4 border-danger">
-          <div class="justify-content-between d-flex">
+          <div class="justify-content-around d-flex">
             <!-- //STUB - My Clock/Weather/off-canvas toggle Section -->
-            <h1 class="mc-2" id="weatherTemp">Weather</h1>
-            <h1 class="fw-bold text-danger text-center" id="Clock"></h1>
+            <div class="mt-5">
+              <h1 class="fw-bold text-danger text-center mt-5 border border-dark rounded-pill px-2" id="Clock"></h1>
+            </div>
 
-            <div class="text-md-end">
-              <button
-                class="btn btn-outline-light btn-info rounded-pill fw-bold shadow border border-3 border-dark mt-2"
+            <div>
+              <h1 class="px-2" id="weatherTemp">Weather</h1>
+            </div>
+
+            <div class="text-center mt-5">
+              <button class="btn btn-outline-light btn-info rounded-pill mt-5 fw-bold px-2 border border-3 border-dark"
                 type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
-                aria-controls="offcanvasRight">Click to get your
-                To-Do's
-              </button>
+                aria-controls="offcanvasRight">To-Do's List</button>
 
             </div>
 

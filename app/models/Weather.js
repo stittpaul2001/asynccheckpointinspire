@@ -7,16 +7,15 @@ export class Weather {
     this.icon = data.icon
     this.name = data.name
     this.main = data.main
-    this.main0 = data.main.feels_like
-    this.main1 = data.main.temp
-    this.main2 = data.main.humidity
-    this.main3 = data.main.temp_max
-    this.main4 = data.main.temp_min
+    this.feels_like = data.main.feels_like
+    this.humidity = data.main.humidity
+    this.temp_max = data.main.temp_max
+    this.temp_min = data.main.temp_min
     this.description = data.description
-    this.temp = data.temp
+    this.temp = data.main.temp
     this.weather = data.weather
-    this.weather0 = data.weather.icon
-    this.weather1 = data.weather[0].description
+    this.icon = data.weather.icon
+    this.description = data.weather[0].description
     this.pressure = data.pressure
     this.wind = data.wind.speed
 
@@ -25,14 +24,14 @@ export class Weather {
   }
 
   get celsiusTemp() {
-    const kelvin = this.main1
+    const kelvin = this.temp
     const celsiusTemp = kelvin - 273
     return Math.floor(celsiusTemp)
 
   }
 
   get fahrenheitTemp() {
-    const kelvin = this.main1
+    const kelvin = this.temp
     const fahrenheit = (kelvin - 273)
     const fahrenheitTemp = fahrenheit * 9 / 5 + 32
     return Math.floor(fahrenheitTemp)
@@ -48,11 +47,16 @@ export class Weather {
 
 
   get tempTemplate() {
-    return `<section class="px-2 mx-2"
-    <div class="text-center fs-4">${this.name}-${this.weather1}</div>
-    <div onclick="app.weatherController.changeTemp()" role="button" class="text-center fs-4">
-    ${this.currentTemp}
-    </div>
+    return `
+    <section>
+      <div class"justify-content-between align-items-center d-flex">
+      <div class="text-center fs-2 p-3">${this.name}</div>
+        <div onclick="app.weatherController.changeTemp()" role="button" class="text-center fs-4 border border-dark rounded-pill px-3">
+          ${this.currentTemp} 
+          <div class="text-capitalize"> ~${this.description}</div>
+          <img src="${this.icon}" alt"${this.description}">
+        </div>
+        </div>
     </section>`
   }
 
