@@ -41,7 +41,8 @@ main {
 }
 
 .completed {
-  color: rgb(19, 233, 19)
+  color: rgb(19, 233, 19);
+
 }
 
 .offcanvas {

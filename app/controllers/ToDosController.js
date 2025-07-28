@@ -35,6 +35,7 @@ export class ToDosController {
 
     let incomplete = todos.filter(todos => todos.completed == false)
 
+
     document.getElementById('todosCount').innerHTML = `${incomplete.length}/${todos.length}`
 
   }
@@ -86,12 +87,12 @@ export class ToDosController {
     try {
       console.log('toggle checkbox', todoId)
       const todos = AppState.todos
-
       await toDosService.toggleCompletedTodo(todoId)
     } catch (error) {
       console.error('could not toggle a task')
       Pop.error(error)
     }
   }
+
 
 }

@@ -16,8 +16,10 @@ export class ToDo {
     return `
     <div class="text-end fs-1 fw-bold" id="todosCount" ${this.count}></div>
     <div class="card todoCard mb-4 border border-3 border-dark">
-                <div class="justify-content-around d-flex fs-2 text-capitalize ${this.completed ? 'completed' : ''}">
-                    <input onchange="app.todosController.toggleCompletedTodo('${this.id}')" class="form-check-input" type="checkbox" name="todo-checkbox" value="checkmark${this.completed}">
+                <div class="justify-content-around  d-flex fs-2 text-capitalize ${this.completed ? 'completed' : ''}">
+                    
+                <input onchange="app.todosController.toggleCompletedTodo('${this.id}')" class="form-check-input" type="checkbox" name="todo-checkbox" id="checkChecked"${this.completed}>
+                    
                     <label for="todo"> ${this.description}</label>
                     ${this.deleteButton}
                 </div>
@@ -30,5 +32,9 @@ export class ToDo {
     return `<button onclick="app.todosController.deleteTodo('${this.id}')" class="btn btn-outline-dark btn-danger fs-3 fw-bold mb-2 mt-2">Delete</button> `
   }
 
+  // get checkboxCheck() {
+  //   if (this.checkboxCheck == this.completed)
+  //     return ``
+  // }
 }
 

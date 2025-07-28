@@ -6,6 +6,7 @@ import { api } from "./AxiosService.js"
 class ToDosService {
 
 
+
   async toggleCompletedTodo(todoId) {
     const findTodo = AppState.todos.find(todo => todo.id == todoId)
     findTodo.completed = !findTodo.completed
