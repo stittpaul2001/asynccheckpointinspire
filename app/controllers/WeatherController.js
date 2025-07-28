@@ -7,7 +7,7 @@ export class WeatherController {
   constructor() {
     console.log('weather controller coming right atcha')
     AppState.on('weather', this.drawTemp)
-    AppState.on('weather', this.changeTemp)
+    // AppState.on('weather', this.changeTemp)
     this.getWeather()
   }
 
@@ -30,7 +30,7 @@ export class WeatherController {
   }
 
   changeTemp() {
-    weatherService.changeTemp()
+    weatherService.changeTempFormat()
   }
 
 }

@@ -6,14 +6,16 @@ import { api } from "./AxiosService.js"
 class WeatherService {
 
 
-  changeTemp() {
+  changeTempFormat() {
     const weather = AppState.weather
-    if (weather.tempChanges == 'celsius') {
-      weather.fahrenheitTemp
+    if (weather.currentFormat == 'celsius') {
+      weather.currentFormat = 'fahrenheit'
     }
     else {
-      weather.celsiusTemp
+      weather.currentFormat = 'celsius'
     }
+    console.log('⛅', weather);
+
   }
 
 

@@ -26,14 +26,18 @@ main {
   padding: 5;
 }
 
-.quote-author-stay {
+.quote-author-stay+.quote-author {
   transition: opacity .5s ease;
-  opacity: 1;
+  opacity: 0;
+  /* color: red; */
 }
 
-.quote-author:hover {
-  opacity: 0;
+.quote-author-stay:hover+.quote-author {
+  transition: opacity .5s ease;
+  opacity: 1;
+  /* color: red; */
 }
+
 
 .todo-card {
   object-position: center;

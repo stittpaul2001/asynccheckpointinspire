@@ -17,13 +17,11 @@ export class Quotes {
   get quotesList() {
     return `
               <div class="text-center fs-2 p-2 quote-author-stay">${this.quote}</div>
-              <div class="text-end mx-3 p-2 px-4 fs-4 fw-bold text-capitalize   text-decoration-underline">
-              <div class="text-end quote-author">
+              <div class="text-end quote-author mx-3 p-2 px-4 fs-4 fw-bold text-capitalize   text-decoration-underline">
                 <i class="mdi fw-bold  mdi-book-open-page-variant"></i>
                 ~ ${this.author} ~
                 <i class="mdi fw-bold  mdi-book-open-page-variant"></i>
                 </div>
-                  </div>
               </div>
             
     `

@@ -20,25 +20,27 @@ export class Weather {
     this.pressure = data.pressure
     this.wind = data.wind.speed
 
+    this.currentFormat = 'celsius'
+
   }
 
   get celsiusTemp() {
-    const kelvin = 293
+    const kelvin = this.main1
     const celsiusTemp = kelvin - 273
     return Math.floor(celsiusTemp)
 
   }
 
   get fahrenheitTemp() {
-    const kelvin = 293
+    const kelvin = this.main1
     const fahrenheit = (kelvin - 273)
     const fahrenheitTemp = fahrenheit * 9 / 5 + 32
     return Math.floor(fahrenheitTemp)
   }
 
-  get tempChanges() {
+  get currentTemp() {
     const weatherChange = AppState.weather
-    if (this.fahrenheitTemp) {
+    if (this.currentFormat == 'fahrenheit') {
       return `<div class="text-center fs-2 p-2">${this.fahrenheitTemp}°F</div>`
     }
     return `<div class="text-center fs-2 p-2">${this.celsiusTemp}°C</div>`
@@ -48,10 +50,9 @@ export class Weather {
   get tempTemplate() {
     return `<section class="px-2 mx-2"
     <div class="text-center fs-4">${this.name}-${this.weather1}</div>
-    <div onclick="app.weatherController.changeTemp() role="button" class="text-center fs-4">
-    ${this.tempChanges}
+    <div onclick="app.weatherController.changeTemp()" role="button" class="text-center fs-4">
+    ${this.currentTemp}
     </div>
-    <div class="text-center fs-2"> ${this.celsiusTemp} °C</div>
     </section>`
   }
 
